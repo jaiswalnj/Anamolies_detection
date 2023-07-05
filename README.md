@@ -2,6 +2,11 @@
 
 This is a Flask web application that utilizes scikit-learn's IsolationForest algorithm for anomaly detection. It allows you to upload a CSV file, select relevant features, and detect anomalies in the data.
 
+# Results
+![Homepage](https://github.com/jaiswalnj/Anamolies_detection/blob/main/index.png)
+
+![Result page](https://github.com/jaiswalnj/Anamolies_detection/blob/main/result.png)
+
 ## Prerequisites
 
 Python 3.7 or above
