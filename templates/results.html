@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anomaly Detection Results</title>
+    <style>
+        body {
+            background-color: #acabf7;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom :5%;
+            text-align: center;
+            color: black;
+            font-size: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            border-radius: 20px;
+            margin-left:10%;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #7f7dfa;
+            color: white;
+        }
+        th:hover {
+            background-color: #5552fa;
+        }
+        p {
+            text-align: center;
+            color: black;
+            font-size: 18px;
+        }
+        div{
+            background-color:white;
+            border-radius: 20px;
+            width: 70%;
+            height: 30%;
+            align-items: center;
+            padding: 6% 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <h1>Anomaly Detection Results</h1>
+        {% if anomalies.empty %}
+            <p>No anomalies detected.</p>
+        {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Track ID</th>
+                        <th>Speed</th>
+                        <th>Temperature</th>
+                        <th>Vibration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for _, row in anomalies.iterrows() %}
+                        <tr>
+                            <td>{{ row['timestamp'] }}</td>
+                            <td>{{ row['track_id'] }}</td>
+                            <td>{{ row['speed'] }}</td>
+                            <td>{{ row['temperature'] }}</td>
+                            <td>{{ row['vibration'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>

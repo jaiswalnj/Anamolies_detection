@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anomaly Detection</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            background-color: #acabf7;
+        }
+        h1 {
+            text-align: center;
+            color: #363636;
+            font-size: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #7f7dfa;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #5552fa;
+        }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo{
+            height:200px;
+            width:370px;
+        }
+        .div{
+            background-color:white;
+            padding: 4% 0;
+            width: 50%;
+            height: 50%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+    <div class="centered">
+        <img src="/static/logo.png" alt="Logo Image" class="logo"/>
+    </div>
+    <h1>Anomaly Detection</h1>
+    <form method="POST" action="/detect_anomalies" enctype="multipart/form-data">
+        <input type="file" name="data_file">
+        <input type="submit" value="Detect Anomalies">
+    </form>
+</div>
+</body>
+</html>
